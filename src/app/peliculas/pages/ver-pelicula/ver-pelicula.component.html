@@ -1,1 +1,16 @@
-<p>ver-pelicula works!</p>
+<div class="container ">
+  <h2>Informacion Pelicula</h2>
+  <br>
+  <label>{{pelicula?.titulo}}</label>
+  <br>
+  <label>{{pelicula?.director}}</label>
+  <br>
+  <label>{{pelicula?.genero}}</label>
+  <br>
+  <label>{{pelicula?.anio}}</label>
+  <br>
+  <label>{{pelicula?.duracion}}</label>
+  <br>
+  <button class="btn btn-dark" [routerLink]="['../../']" routerLinkActive="active">Volver a Buscar</button>
+</div>
+

@@ -1,1 +1,22 @@
-<p>por-titulo works!</p>
+<h2>Busqueda por titulo </h2>
+<br>
+<input type="text" name="titulo" [(ngModel)]="titulo" placeholder="Introduce un titulo">
+<button class="button btn-dark" (click)="buscarTitulo()">Buscar</button>
+<br>
+<br>
+<table class="table container" *ngIf="peliculasTitulo.length != 0">
+  <thead class="table-dark">
+    <th scope="col">ID</th>
+    <th scope="col">Titulo</th>
+    <th scope="col"></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of peliculasTitulo">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.titulo}}</td>
+      <td [routerLink]="['verPelicula',p.id]" routerLinkActive="active">Ir a la pagina</td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>

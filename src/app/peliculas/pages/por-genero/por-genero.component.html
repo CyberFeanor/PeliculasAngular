@@ -1,1 +1,38 @@
-<p>por-genero works!</p>
+<h2>Busqueda por genero</h2>
+<br>
+<div class="btn-group">
+  <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" value="Drama"  [(ngModel)]="genero"/>
+  <label class="btn btn-secondary" for="option1">Drama</label>
+  <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" value="Fantasia" [(ngModel)]="genero"/>
+  <label class="btn btn-secondary" for="option2">Fantasia</label>
+  <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" value="Ciencia-Ficcion" [(ngModel)]="genero"/>
+  <label class="btn btn-secondary" for="option3">Ciencia-Ficcion</label>
+  <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" value="Historica" [(ngModel)]="genero"/>
+  <label class="btn btn-secondary" for="option4">Historica</label>
+  <input type="radio" class="btn-check" name="options" id="option5" autocomplete="off" value="Thriller" [(ngModel)]="genero"/>
+  <label class="btn btn-secondary" for="option5">Thriller</label>
+  <input type="radio" class="btn-check" name="options" id="option6" autocomplete="off" value="Comeria" [(ngModel)]="genero"/>
+  <label class="btn btn-secondary" for="option6">Comedia</label>
+</div>
+
+<button class="btn btn-dark" (click)="buscarGenero()">Buscar</button>
+
+<br>
+<br>
+<table class="table container" *ngIf="peliculasGenero.length != 0">
+  <thead class="table-dark">
+    <th scope="col">ID</th>
+    <th scope="col">Titulo</th>
+    <th scope="col"></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of peliculasGenero">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.titulo}}</td>
+      <td [routerLink]="['verPelicula',p.id]" routerLinkActive="active">Ir a la pagina</td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
+

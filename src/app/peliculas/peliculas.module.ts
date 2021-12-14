@@ -6,13 +6,17 @@ import { PorDuracionComponent } from './pages/por-duracion/por-duracion.componen
 import { PorGeneroComponent } from './pages/por-genero/por-genero.component';
 import { VerPeliculaComponent } from './pages/ver-pelicula/ver-pelicula.component';
 import { PorTituloComponent } from './pages/por-titulo/por-titulo.component';
+import { FormsModule } from '@angular/forms';
+import { PeliculaService } from '../services/pelicula.service';
+import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [PorAnioComponent,PorDirectorComponent,PorDirectorComponent,PorDuracionComponent,PorGeneroComponent,VerPeliculaComponent,PorTituloComponent],
   imports: [
-    CommonModule
-  ],exports:[PorAnioComponent,PorDirectorComponent,PorDirectorComponent,PorDuracionComponent,PorGeneroComponent,VerPeliculaComponent,PorTituloComponent]
+    CommonModule,FormsModule,RouterModule
+  ],exports:[PorAnioComponent,PorDirectorComponent,PorDirectorComponent,PorDuracionComponent,PorGeneroComponent,VerPeliculaComponent,PorTituloComponent],
+  providers:[PeliculaService]
 })
 export class PeliculasModule { }

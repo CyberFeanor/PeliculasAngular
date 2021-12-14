@@ -11,10 +11,10 @@ const routes: Routes = [
   {
     path:'',
     component:PorTituloComponent,
-    pathMatch: 'full',
+
     children: [
       {
-        path:'verPelicula/:id', component: VerPeliculaComponent
+        path:'verPelicula/:id' ,component: VerPeliculaComponent
       }
     ]
 

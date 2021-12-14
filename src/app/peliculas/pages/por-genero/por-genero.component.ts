@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PeliculaService } from 'src/app/services/pelicula.service';
+import { Pelicula } from '../../interfaces/pelicula.interface';
 
 @Component({
   selector: 'app-por-genero',
@@ -8,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PorGeneroComponent implements OnInit {
 
-  constructor() { }
+  constructor(private peliculaService:PeliculaService) { }
 
   ngOnInit(): void {
   }
+
+  genero:String="";
+
+  peliculasGenero:Pelicula[]=[];
+
+  buscarGenero():void{
+    for(let p of this.peliculaService.peliculas){
+      if(p.genero == this.genero){
+        this.peliculasGenero.push(p);
+      }
+    }
+  }
+
 
 }

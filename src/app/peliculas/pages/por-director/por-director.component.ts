@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PeliculaService } from 'src/app/services/pelicula.service';
 
 @Component({
   selector: 'app-por-director',
@@ -8,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PorDirectorComponent implements OnInit {
 
-  constructor() { }
+
+  
+
+  constructor(private peliculaService:PeliculaService) { }
 
   ngOnInit(): void {
   }
