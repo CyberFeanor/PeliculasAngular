@@ -1,1 +1,28 @@
-<p>por-duracion works!</p>
+<h2> Busqueda por duracion</h2>
+<br>
+<label class="form-label" for="duracionRange">Rango de duracion</label>
+<div class="range">
+  <input type="range" class="form-range" min="{{minDuracion}}" max="{{maxDuracion}}" id="duracionRange" [(ngModel)] ="valor"/>
+  <label for="duracionRange">{{valor}}</label>
+</div>
+<br>
+<button class="btn btn-dark" (click)="buscarDuracion()">Buscar</button>
+<br>
+<br>
+<table class="table container" *ngIf="peliculasDuracion.length != 0">
+  <thead class="table-dark">
+    <th scope="col">ID</th>
+    <th scope="col">Titulo</th>
+    <th scope="col"></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of peliculasDuracion">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.titulo}}</td>
+      <td><a [routerLink]="['verPelicula',p.id]" routerLinkActive="active">Mas Informacion</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>
+

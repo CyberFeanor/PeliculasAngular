@@ -13,17 +13,9 @@ export class PorTituloComponent  {
 
   titulo:string = "";
 
-  constructor(private peliculaService:PeliculaService,private route:ActivatedRoute, private router:Router) { }
-
+  constructor(private peliculaService:PeliculaService) { }
 
   peliculasTitulo:Pelicula[] = [];
-
-  irPelicula(id:number){
-    this.router.navigateByUrl(`/verPelicula/${id}`);
-    // this.router.navigate(['/verPelicula', { id: p.id }]);
-    // console.log("Que pasa");
-    // this.router.navigate(['verPelicula'], {relativeTo:this.route});
-  }
 
   buscarTitulo():void{
     this.peliculasTitulo = [];

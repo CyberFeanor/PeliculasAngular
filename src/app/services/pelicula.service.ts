@@ -90,4 +90,45 @@ export class PeliculaService{
   get peliculas():Pelicula[]{
     return [...this._peliculas];
   }
+
+  menorDuracion():number{
+    let min = 99999;
+    for(let p of this._peliculas){
+      if(p.duracion < min){
+        min = p.duracion;
+      }
+    }
+    return min;
+  }
+
+  mayorDuracion():number{
+    let max = -99999;
+    for(let p of this._peliculas){
+      if(p.duracion > max){
+        max = p.duracion;
+      }
+    }
+    return max;
+  }
+
+  masAntigua():number{
+    let min = 99999;
+    for(let p of this._peliculas){
+      if(p.anio < min){
+        min = p.anio;
+      }
+    }
+    return min;
+  }
+
+
+  masModerna():number{
+    let max = -9999999;
+    for(let p of this._peliculas){
+      if(p.anio > max){
+        max = p.anio;
+      }
+    }
+    return max;
+  }
 }

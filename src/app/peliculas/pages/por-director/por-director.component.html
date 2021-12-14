@@ -1,1 +1,23 @@
-<p>por-director works!</p>
+<h2>Busqueda por director </h2>
+<br>
+<input type="text" name="director" [(ngModel)]="director" placeholder="Introduce un director">
+<br>
+<button class="btn btn-dark" (click)="buscarDirector()">Buscar</button>
+<br>
+<br>
+<table class="table container" *ngIf="peliculasDirector.length != 0">
+  <thead class="table-dark">
+    <th scope="col">ID</th>
+    <th scope="col">Titulo</th>
+    <th scope="col"></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of peliculasDirector">
+      <th scope="row">{{p.id}}</th>
+      <td>{{p.titulo}}</td>
+      <td><a [routerLink]="['verPelicula',p.id]" routerLinkActive="active">Mas Informacion</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<router-outlet></router-outlet>

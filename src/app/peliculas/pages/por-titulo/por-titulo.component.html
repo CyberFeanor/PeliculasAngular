@@ -14,7 +14,7 @@
     <tr *ngFor="let p of peliculasTitulo">
       <th scope="row">{{p.id}}</th>
       <td>{{p.titulo}}</td>
-      <td [routerLink]="['verPelicula',p.id]" routerLinkActive="active">Ir a la pagina</td>
+      <td><a [routerLink]="['verPelicula',p.id]" routerLinkActive="active">Mas Informacion</a></td>
     </tr>
   </tbody>
 </table>

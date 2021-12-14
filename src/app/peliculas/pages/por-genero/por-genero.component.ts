@@ -20,6 +20,7 @@ export class PorGeneroComponent implements OnInit {
   peliculasGenero:Pelicula[]=[];
 
   buscarGenero():void{
+    this.peliculasGenero=[];
     for(let p of this.peliculaService.peliculas){
       if(p.genero == this.genero){
         this.peliculasGenero.push(p);

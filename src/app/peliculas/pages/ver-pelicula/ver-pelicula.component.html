@@ -1,15 +1,15 @@
 <div class="container ">
   <h2>Informacion Pelicula</h2>
   <br>
-  <label>{{pelicula?.titulo}}</label>
+  <label>Titulo: <span>{{pelicula?.titulo}}</span></label>
   <br>
-  <label>{{pelicula?.director}}</label>
+  <label>Director: <span>{{pelicula?.director}}</span></label>
   <br>
-  <label>{{pelicula?.genero}}</label>
+  <label>Genero: <span>{{pelicula?.genero}}</span></label>
   <br>
-  <label>{{pelicula?.anio}}</label>
+  <label>Año: <span>{{pelicula?.anio}}</span></label>
   <br>
-  <label>{{pelicula?.duracion}}</label>
+  <label>Duracion: <span>{{pelicula?.duracion}}</span></label>
   <br>
   <button class="btn btn-dark" [routerLink]="['../../']" routerLinkActive="active">Volver a Buscar</button>
 </div>
